@@ -1,7 +1,7 @@
 {
-  "name": "prototype_boilerplate",
+  "name": "my_new_website",
   "version": "0.0.1",
-  "description": "A Prototyping boilerplate implemented on Gulp Webpack Sass Karma Jasmine, for use in prototyping small apps or modules.",
+  "description": "My new website project",
   "main": "index.js",
   "scripts": {
     "start": "webpack --config ./webpack.config.js --progress --colors & node ./app.js --history-api-fallback"
@@ -21,6 +21,7 @@
     "browser-sync": "^2.13.0",
     "dat-gui": "^0.5.0",
     "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.3",
     "gulp-jasmine": "^2.4.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",

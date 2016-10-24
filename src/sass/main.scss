@@ -1,13 +1,30 @@
 @import "css3-mixins-lib";
-@import url('https://fonts.googleapis.com/css?family=Poppins|Suranna');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 //variables
+$font-opensans: 'Open Sans', sans-serif;
+$font-small: 18px;
+$font-normal:24px;
+$font-medium: 32px;
+$font-large:36px;
+$default-opacity: 0.8;
+//colors
+$light-grey: #BDBDBD;
+$dark-grey: #4F4F4F;
+$accent-green: #33D399;
 
-* {
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin: 0;
 }
 
+html{
+    font-size: $font-small;
+}
 body {
-    
+    font-family: $font-opensans;
 }
 
 header {
@@ -16,9 +33,156 @@ header {
 
 h1 {
     width:100%;
+    font-size: $font-large;
 }
+
+h2{
+    font-size: $font-medium;
+}
+
+.section-title{
+    margin-bottom: 4.4em;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+//custom elements
+#logo{
+    width: 80px;
+    height: 80px;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.center{
+    text-align: center;
+}
+
+
+#site-title::after {
+    content: " ";
+    border: solid #E0E0E0 1px;
+    display: block;
+    margin: 2em 0;
+}
+
+#main-nav{
+    text-align: right;
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            display: inline;
+            margin: 0 2em 0 0;  
+             color: $light-grey;    
+            a{
+                text-decoration: none;   
+            }
+            
+        }
+        li:last-child{
+            margin: 0;
+        }
+    }
+}
+
+.current{
+    color: $accent-green;  
+}
+
+.more-button {
+    color: $accent-green;
+    opacity: $default-opacity;  
+    &:after {
+        content: " ";
+        border: solid 1px black;
+        display: block;
+        margin-top: 2px; 
+        opacity: $default-opacity;   
+    }
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+
+.card.project-card{
+    height: 28em;
+}
+
+//grid and containers
+
+[class*='col'] {
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
+
+[class*='col']:last-of-type {
+  padding-right: 0;
+}
+
+// [class*='col-'] {
+//   float: left;
+// }
+
+.container{
+    padding: 0;
+    margin: 80px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    align-items: center;
+}
+
+.col{
+    width: 50%;
+}
+
+.col-full{
+    width: 100%;
+}
+
+
+
 
 
 @media screen and (min-width: 1025px) {}
 
 @media screen and (max-width: 1024px) {}
+
+
+@media screen and (max-width:960px) {
+    [class*='col'] {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 40px;
+    }
+
+    #main-nav{
+        text-align: center;
+    }
+    
+    #logo-wrapper{
+        text-align: center;
+    }
+
+    .container {
+        justify-content: center;
+    }
+}
