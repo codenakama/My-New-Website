@@ -1,13 +1,17 @@
 @import "css3-mixins-lib";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 //variables
 $font-opensans: 'Open Sans', sans-serif;
+$font-lato: 'Lato', sans-serif;
 $font-small: 18px;
 $font-normal:24px;
 $font-medium: 32px;
 $font-large:36px;
 $default-opacity: 0.8;
+$default-transition-time: 0.6s;
 //colors
+$pale-grey: #F2F2F2;
 $light-grey: #BDBDBD;
 $dark-grey: #4F4F4F;
 $accent-green: #33D399;
@@ -24,11 +28,12 @@ html{
     font-size: $font-small;
 }
 body {
-    font-family: $font-opensans;
+    font-family: $font-lato;
 }
 
 header {
-    
+    margin-bottom: 6.7em;
+    margin-top:80px;
 }
 
 h1 {
@@ -49,7 +54,7 @@ h2{
     display: flex;
     -webkit-flex-flow: row wrap;
     justify-content: center;
-    margin-top: 6.7em;
+    margin-bottom: 6.7em;
 }
 
 .section-title{
@@ -68,8 +73,8 @@ a{
 
 //custom elements
 #logo{
-    width: 80px;
-    height: 80px;
+    width: 200px;
+
 }
 
 .left{
@@ -106,8 +111,14 @@ a{
             a{
                 color: $light-grey;    
                 text-decoration: none; 
+                border-bottom: solid 1px #fff;
+                transition: all $default-transition-time;
                 &.current{
                     color: $accent-green;  
+                }
+
+                &:hover{
+                    border-bottom: solid 1px $accent-green;
                 }  
             }
             
@@ -122,17 +133,28 @@ a{
     color: $accent-green;
     opacity: $default-opacity; 
     margin-top: 2.3em; 
-    &:after {
+    &:after{
+        width: 0%;
         content: " ";
-        border: solid 1px black;
+        border: solid 1px #fff;
         display: block;
         margin-top: 2px; 
-        opacity: $default-opacity;   
+        opacity: 1;
+        margin:0 auto;
+        transition: all $default-transition-time ease-in-out;
+    }
+    &:hover:after {
+        border-color: #33D399;
+        width: 100%;   
+        
     }
 
-    &:hover{
-        opacity: 1;
-    }
+    // &:hover{
+    //     opacity: 1;
+    //     transition: opacity $default-transition-time ease-in;
+    // }
+
+
 }
 
 .intro{
@@ -141,7 +163,22 @@ a{
 }
 
 .card.project-card{
-    height: 28em;
+    width:100%;
+    position: relative;
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    .project-card-title{
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        color: white;
+        font-size: 2em;
+        //text-shadow: 1px 1px #000;
+    }
+
 }
 
 
@@ -149,7 +186,11 @@ a{
 .blog-post-card{
     
     .blog-post-card-header{
-        height: 28em;
+       width: 100%;
+
+       img{
+           width: 100%;
+       }
     }
 
     .blog-post-card-content{
@@ -176,6 +217,12 @@ a{
         .blog-post-title{
             color: $accent-green;
             margin-bottom: 1.1em;
+            opacity: $default-opacity;
+            
+            &:hover{
+                opacity: 1;
+                transition: opacity $default-transition-time;
+            }
         }
 
         .blog-post-preview{
@@ -187,13 +234,36 @@ a{
             background-repeat:no-repeat;
             background-size:contain;
             background-position:center;
-            
 
+           
+        }
+        
+        .blog-post-body{
+            color: $light-grey;
+            text-align: justify;
+            p{
+                margin-top: 1.1em;
+            }
         }
 
+        &.blog-post {
+            padding: 0;
+            margin-top: 1.1em;
+        }
         
     }
 
+}
+
+ .blog-post-banner {
+    height: 20em;
+    background-size: cover;
+}
+
+footer{
+    height: 100%;
+    padding: 4.4em 0;
+    background-color: $pale-grey;
 }
 
 //grid and containers
@@ -204,7 +274,7 @@ a{
 }
 
 [class*='col']:last-of-type {
-   padding-right: 0;
+//    padding-right: 0;
   padding-bottom: 0;
 }
 
@@ -219,7 +289,7 @@ a{
 
 .container{
     padding: 0;
-    margin: 80px;
+    margin: 0px 80px  80px 80px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
