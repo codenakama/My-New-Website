@@ -332,8 +332,10 @@
     <Content Include="Config\Lang\ru-RU.user.xml" />
     <Content Include="Config\Lang\sv-SE.user.xml" />
     <Content Include="Config\Lang\zh-CN.user.xml" />
+    <Content Include="Css\main.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bundle.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -374,6 +376,13 @@
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
     <Content Include="App_Plugins\NestedContent\package.manifest" />
+    <Content Include="Views\Blog.cshtml" />
+    <Content Include="Views\BlogPost.cshtml" />
+    <Content Include="Views\HomePage.cshtml" />
+    <Content Include="Views\Project.cshtml" />
+    <Content Include="Views\Projects.cshtml" />
+    <Content Include="Views\_Layout.cshtml" />
+    <Content Include="Css\main.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -384,6 +393,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
