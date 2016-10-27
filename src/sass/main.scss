@@ -1,6 +1,7 @@
 @import "css3-mixins-lib";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import "./font-awesome/font-awesome.scss";
 //variables
 $font-opensans: 'Open Sans', sans-serif;
 $font-lato: 'Lato', sans-serif;
@@ -170,14 +171,33 @@ a{
         height: auto;
     }
 
-    .project-card-title{
+
+    .after {
         position: absolute;
-        bottom: 1em;
-        left: 1em;
-        color: white;
-        font-size: 2em;
-        //text-shadow: 1px 1px #000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // display: none;
+        color: #FFF;
+        opacity: 0;
+       transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
+
+    &:hover .after{
+         opacity: 1;
+    }
+
+      .project-card-title{
+            position: absolute;
+            bottom: 1em;
+            left: 1em;
+            color: #000;
+            font-size: 2em;
+            
+        }
+
+ 
 
 }
 
@@ -264,18 +284,36 @@ footer{
     height: 100%;
     padding: 4.4em 0;
     background-color: $pale-grey;
+
+    
+}
+
+
+.social-links {
+    text-align: right;
+    color: #bdbdbd;
+
+    a{
+       color: #bdbdbd;
+       margin-left: 1.1em;
+       &:hover{
+        color:$accent-green;
+
+       }
+    }
+
 }
 
 //grid and containers
 
 [class*='col'] {
-  padding-right: 40px;
+  padding-right: 20px;
   padding-bottom: 40px;
 }
 
 [class*='col']:last-of-type {
-//    padding-right: 0;
-  padding-bottom: 0;
+    padding-right: 0; 
+    padding-left: 20px;
 }
 
 // [class*='col-full']:last-of-type {
@@ -322,6 +360,12 @@ footer{
         padding-right: 0;
         padding-bottom: 40px;
     }
+
+    [class*='col']:last-of-type {
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
 
     #main-nav{
         text-align: center;
