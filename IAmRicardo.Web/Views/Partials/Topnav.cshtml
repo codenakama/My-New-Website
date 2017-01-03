@@ -1,0 +1,21 @@
+﻿@model IPublishedContent
+
+@{
+    IEnumerable<IPublishedContent> navElements = Model.AncestorOrSelf(1).Children.Where(x => x.IsVisible());
+}
+
+@if (navElements != null && navElements.Any())
+{
+    <nav id="main-nav">
+        <ul class="">
+            @foreach (var navItem in navElements)
+            {
+                <li><a class="@(navItem.IsAncestorOrSelf(Model) ? "current" : "")" href="@navItem.Url">@navItem.GetPropertyValue("menuTitle")</a></li>
+            }
+            @*<li><a class="current" href="#">Projects</a></li>
+            <li><a href="blog-listing-page.html">Blog</a></li>*@
+            <li><a href="mailto:rj.abreu@outlook.com">Contact</a></li>
+        </ul>
+    </nav>
+}
+

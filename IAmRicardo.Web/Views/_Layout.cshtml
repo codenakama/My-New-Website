@@ -1,6 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = null;
+    Layout = null;
+    IPublishedContent SettingsNode = Umbraco.TypedContentAtRoot().DescendantsOrSelf("settings").FirstOrDefault();
+
+    IPublishedContent logo = SettingsNode.GetPropertyValue<IEnumerable<IPublishedContent>>("logo").FirstOrDefault();
+
 }
 
 
@@ -8,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>I Am Ricardo</title>
+    <title>@SettingsNode.GetPropertyValue("siteTitle")</title>
     <link rel="stylesheet" href="/Css/main.css">
 </head>
 
@@ -18,17 +22,18 @@
         <div class="container nav-wrapper">
             <div class="col">
                 <div id="logo-wrapper">
-                    <a href="index.html"><img id="logo" src="/public/images/logo-ricardo.png" alt="logo"></a>
+                    <a href="/">
+                        @if (logo != null)
+                        {
+                            
+                            <img id="logo" src="@logo.GetCropUrl(200,39)" alt="logo">
+                        }
+                    </a>
                 </div>
             </div>
             <div class="col">
-                <nav id="main-nav">
-                    <ul class="">
-                        <li><a class="current" href="#">Projects</a></li>
-                        <li><a href="blog-listing-page.html">Blog</a></li>
-                        <li><a href="mailto:rj.abreu@outlook.com">Contact</a></li>
-                    </ul>
-                </nav>
+                @Html.Partial("TopNav", Model.Content)
+               
             </div>
         </div>
     </header>
@@ -39,22 +44,23 @@
 
 </div>
 
-    <footer>
-        <div class="container">
-            <div class="col">
-                <p>© 20016 IAmRicardo</p>
+<footer>
+    <div class="container">
+        <div class="col">
+            <p>© 20016 CodeNakama</p>
 
-            </div>
-            <div class="col">
-                <div class="social-links">
-                    <a href="https://www.instagram.com/iamricardo_o/" title="Instagram" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/rjabreu" title="LinkedIn" target="_blank"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
-                    <a href="https://github.com/rjabreu" title="GitHub" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/iamricardo_o" title="Twitter" target="_blank"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
-                </div>
+        </div>
+        <div class="col">
+            <div class="social-links">
+                <a href="https://www.instagram.com/iamricardo_o/" title="Instagram" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/rjabreu" title="LinkedIn" target="_blank"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
+                <a href="https://github.com/rjabreu" title="GitHub" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/iamricardo_o" title="Twitter" target="_blank"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+    <script type="text/javascript" src="/Scripts/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="/Scripts/bundle.js"></script>
 </body>
 </html>

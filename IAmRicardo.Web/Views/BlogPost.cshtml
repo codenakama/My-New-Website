@@ -3,3 +3,34 @@
 @{
 	Layout = "_Layout.cshtml";
 }
+
+
+<section class="landing-section">
+    <h2 class="section-title">@Model.Content.MainTitle</h2>
+
+        <div class="card blog-post-card">
+            <div class="blog-post-card-header">
+                @if (Model.Content.BannerImage != null)
+                {
+                    
+                    <div class="blog-post-banner" style="background-image: url(@Model.Content.BannerImage.FirstOrDefault().Url);">
+
+                    </div>
+                }
+
+
+            </div>
+            <div class="blog-post-card-content blog-post">
+                <div class="blog-post-metadata">
+                    <span class="blog-post-category">Web Development</span>
+                    <time class="blog-post-date" datetime="@(Model.Content.Date.ToString("dd-MM-yyyy"))">@(Model.Content.Date.ToString("dd MMMM yyyy"))</time>
+                </div>
+
+                <div class="blog-post-body">
+                    @Html.Raw(Model.Content.Content)
+                </div>
+            </div>
+        </div>
+
+
+</section>

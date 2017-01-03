@@ -27,15 +27,16 @@
             IPublishedContent image = project.GetPropertyValue<IEnumerable<IPublishedContent>>("bannerImage").FirstOrDefault();
 
             <div class="col">
-                <div class="card project-card">
+                <div class="card project-card animation-element bounce-up">
                     @if (image != null)
                     {
-                        
-                        <img src="@image.GetCropUrl(840,685)" alt="">
+                        <img src="@image.GetCropUrl(851,684)" alt="">
                     }
                     <div class="after" style="background: @project.GetPropertyValue("highlightColor");">
-
-                        <h3 class="project-card-title">@project.GetPropertyValue("mainTitle")</h3>
+                        <a href="@project.Url">
+                            
+                            <h3 class="project-card-title">@project.GetPropertyValue("mainTitle")</h3>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -59,12 +60,14 @@
                 
 
                 <div class="col">
-                    <div class="card blog-post-card">
+                    <div class="card blog-post-card animation-element bounce-up">
                         <div class="blog-post-card-header">
                             @if (image != null)
                             {
-
-                                <img src="@image.GetCropUrl(840,525)" alt="">
+                                <a href="@blogPost.Url">
+                                    
+                                    <img src="@image.GetCropUrl(840,525)" alt="">
+                                </a>
                             }
                         </div>
                         <div class="blog-post-card-content">
@@ -90,6 +93,7 @@
                 </div>
             }
         }
-
+    <div class="col-full center">
         <a href="@Model.Content.Descendant("blog").Url" class="more-button">Read all</a>
+    </div>
     </section>
