@@ -219,13 +219,14 @@ a{
 
 .container{
     padding: 0;
-    margin: 80px;
+    margin: 80px auto;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
+	max-width: 70%;
 
 }
 
