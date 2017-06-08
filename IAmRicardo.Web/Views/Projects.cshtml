@@ -1,38 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Projects>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-    Layout = "_Layout.cshtml";
-    IEnumerable<IPublishedContent> projects = Model.Content.Children.Where(x => x.IsVisible()).OrderByDescending(x => x.GetPropertyValue<DateTime>("date"));
-
+	Layout = null;
 }
-
-
-<section class="landing-section">
-    <h2 class="section-title">@Model.Content.MainTitle</h2>
-    @if (projects != null && projects.Any())
-    {
-
-        foreach (var project in projects)
-        {
-            IPublishedContent image = project.GetPropertyValue<IEnumerable<IPublishedContent>>("bannerImage").FirstOrDefault();
-
-            <div class="col">
-                <div class="card project-card animation-element bounce-up">
-                    @if (image != null)
-                    {
-                        <img src="@image.GetCropUrl(851,684)" alt="">
-                    }
-                    <div class="after" style="background: @project.GetPropertyValue("highlightColor");">
-                        <a href="@project.Url">
-
-                            <h3 class="project-card-title">@project.GetPropertyValue("mainTitle")</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        }
-    }
-    <div class="col-full center">
-        <a href="#" class="more-button">More</a>
-    </div>
-</section>
