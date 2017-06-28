@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /* -------------------------------------------------------------
   Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
   By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
@@ -2522,9 +2522,10 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center; }
-  .blog-post-card .blog-post-card-content .blog-post-body {
-    color: #BDBDBD;
-    text-align: justify; }
+    .blog-post-card .blog-post-card-content .blog-post-body {
+        color: #888;
+        text-align: justify;
+    }
     .blog-post-card .blog-post-card-content .blog-post-body p {
       margin-top: 1.1em; }
   .blog-post-card .blog-post-card-content.blog-post {
