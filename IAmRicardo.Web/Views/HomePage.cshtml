@@ -10,6 +10,8 @@
     IPublishedContent settingsNode = Umbraco.TypedContentAtRoot().DescendantsOrSelf("settings").FirstOrDefault();
 }
 
+<div class="container">
+
 <section class="profile">
         <h1 id="site-title">@settingsNode.GetPropertyValue("siteTitle")</h1>
         <div class="intro">@Html.Raw(Model.Content.Preview)</div>
@@ -20,13 +22,13 @@
     {
         <h2 class="section-title">Projects</h2>
 
-        <ul class="projects">
+        <ul class="projects-list">
 
             @foreach (var project in latestProjects)
             {
                 IPublishedContent image = project.GetPropertyValue<IEnumerable<IPublishedContent>>("bannerImage").FirstOrDefault();
 
-                <li class="project">
+                <li class="projects-list__item">
                     <div class="card project-card">
                         @if (image != null)
                         {
@@ -101,3 +103,4 @@
         <a href="@Model.Content.Descendant("blog").Url" class="more-button">Read all</a>
     </div>
 </section>
+</div>

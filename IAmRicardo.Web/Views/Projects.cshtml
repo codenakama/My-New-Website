@@ -11,12 +11,14 @@
     {
         <h2 class="section-title">Projects</h2>
 
-        <ul class="projects">
+        <ul class="projects-list">
             @foreach (var project in latestProjects)
             {
                 IPublishedContent image = project.GetPropertyValue<IEnumerable<IPublishedContent>>("bannerImage").FirstOrDefault();
 
-                <li class="project">
+                <li class="projects-list__item">
+                    <a href="@project.Url">
+
                     <div class="card project-card">
                         @if (image != null)
                         {
@@ -29,6 +31,7 @@
                             </a>
                         </div>
                     </div>
+                    </a>
                 </li>
             }
         </ul>

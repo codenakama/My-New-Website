@@ -4,26 +4,19 @@
 	Layout = "_Layout.cshtml";
 }
 
-<section class="landing-section">
-    <h2 class="section-title">@Model.Content.MainTitle</h2>
- 
-        <div class="card blog-post-card">
-            <div class="blog-post-card-header">
-                <div class="blog-post-banner" style="background-image: url(@Model.Content.BannerImage.First().Url);">
+<article class="blog-post">
+    <h2 class="blog-post__title">@Model.Content.MainTitle</h2>
 
-                </div>
-
-
-            </div>
-            <div class="blog-post-card-content blog-post">
-                <div class="blog-post-metadata">
-                    <span class="blog-post-category">@Model.Content.Category</span>
-                    <time class="blog-post-date" datetime="@Model.Content.Date.ToString("dd-MM-yyyy")">@Model.Content.Date.ToString("dd MMMM yyyy")</time>
-                </div>
-
-                <div class="blog-post-body">
-                    @Html.Raw(Model.Content.Content)
-                </div>
-            </div>
+    <div class="blog-post__header">
+        <div class="blog-post__banner" style="background-image: url(@Model.Content.BannerImage.First().Url);">
         </div>
-</section>
+
+    </div>
+    <div class="metadata">
+        <span class="metadata__category">@Model.Content.Category</span>
+        <time class="metadata__date" datetime="@Model.Content.Date.ToString("dd-MM-yyyy")">@Model.Content.Date.ToString("dd MMMM yyyy")</time>
+    </div>
+    <div class="blog-post__body">
+        @Html.Raw(Model.Content.Content)
+    </div>
+</article>

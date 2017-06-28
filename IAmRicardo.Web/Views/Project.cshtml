@@ -3,3 +3,16 @@
 @{
 	Layout = "_Layout.cshtml";
 }
+
+
+<article class="project">
+    <h2 class="project__title">@Model.Content.MainTitle</h2>
+
+    <div class="project__header">
+        <div class="project__banner" style="background-image: url(@Model.Content.BannerImage.FirstOrDefault().Url);">
+        </div>
+    </div>
+    <div class="project__description">
+        @Html.Raw(Model.Content.Description)
+    </div>
+</article>
