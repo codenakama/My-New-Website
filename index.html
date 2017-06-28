@@ -11,29 +11,25 @@
 <body>
     <header>
         <div class="container nav-wrapper">
-            <div class="col">
-                <div id="logo-wrapper">
-                    <a href="index.html"><img id="logo" src="/public/images/logo-ricardo.png" alt="logo"></a>
-                </div>
+            <div id="logo-wrapper">
+                <a href="index.html"><img id="logo" src="/public/images/logo-ricardo.png" alt="logo"></a>
             </div>
-            <div class="col">
-                <nav id="main-nav">
-                    <ul class="">
-                        <li><a class="current" href="#">Projects</a></li>
-                        <li><a href="blog-listing-page.html">Blog</a></li>
-                        <li><a href="mailto:rj.abreu@outlook.com">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav id="main-nav">
+                <ul class="">
+                    <li><a class="current" href="#">Projects</a></li>
+                    <li><a href="blog-listing-page.html">Blog</a></li>
+                    <li><a href="mailto:rj.abreu@outlook.com">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <div class="container">
-        <section class="landing-section">
-            <div class="col-full">
-                <h1 id="site-title">Ricardo Abreu</h1>
-                <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et massa sit amet ante vehicula tempor
-                    non eu orci.</p>
-            </div>
+        <section class="profile">
+
+            <h1 id="site-title">Ricardo Abreu</h1>
+            <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et massa sit amet ante vehicula tempor non
+                eu orci.</p>
+
         </section>
 
 
@@ -74,91 +70,127 @@
 
         <section class="landing-section">
             <h2 class="section-title">Latest blogs</h2>
-            <div class="col">
-                <div class="card blog-post-card">
-                    <div class="blog-post-card-header">
-                        <img src="/public/images/blog-post-1.png" alt="">
-                    </div>
-                    <div class="blog-post-card-content">
-                        <div class="blog-post-metadata">
-                            <span class="blog-post-category">Web Development</span>
-                            <time class="blog-post-date" datetime="24-10-2016">24 October 2016</time>
+            <ul class="blog-posts">
+                <li class="blog-post">
+                    <div class="card blog-post-card">
+                        <div class="blog-post-card-header">
+                            <img src="/public/images/blog-post-1.png" alt="">
                         </div>
+                        <div class="blog-post-card-content">
+                            <div class="blog-post-metadata">
+                                <span class="blog-post-category">Web Development</span>
+                                <time class="blog-post-date" datetime="24-10-2016">24 October 2016</time>
+                            </div>
 
-                        <a href="#">
-                            <h3 class="blog-post-title">Blog post 1 title</h3>
-                        </a>
-                        <p class="blog-post-preview">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis urna vitae ipsum vulputate congue id ac nibh. Curabitur
-                            ac sem mollis, porta ante ac, porta tortor.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col">
-                <div class="card blog-post-card">
-                    <div class="blog-post-card-header">
-                        <img src="/public/images/blog-post-2.png" alt="">
-                    </div>
-                    <div class="blog-post-card-content">
-                        <div class="blog-post-metadata">
-                            <span class="blog-post-category">Web Development</span>
-                            <time class="blog-post-date" datetime="24-10-2016">10 October 2016</time>
+                            <a href="#">
+                                <h3 class="blog-post-title">Blog post 1 title</h3>
+                            </a>
+                            <p class="blog-post-preview">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis urna vitae ipsum vulputate congue id ac nibh. Curabitur
+                                ac sem mollis, porta ante ac, porta tortor.
+                            </p>
                         </div>
-
-                        <h3 class="blog-post-title">Blog post 2 title</h3>
-                        <p class="blog-post-preview">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis urna vitae ipsum vulputate congue id ac nibh. Curabitur
-                            ac sem mollis, porta ante ac, porta tortor.
-                        </p>
                     </div>
-                </div>
+                </li>
+                <li class="blog-post">
+                    <div class="card blog-post-card">
+                        <div class="blog-post-card-header">
+                            <img src="/public/images/blog-post-2.png" alt="">
+                        </div>
+                        <div class="blog-post-card-content">
+                            <div class="blog-post-metadata">
+                                <span class="blog-post-category">Web Development</span>
+                                <time class="blog-post-date" datetime="24-10-2016">10 October 2016</time>
+                            </div>
 
-            </div>
+                            <h3 class="blog-post-title">Blog post 2 title</h3>
+                            <p class="blog-post-preview">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis urna vitae ipsum vulputate congue id ac nibh. Curabitur
+                                ac sem mollis, porta ante ac, porta tortor.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+
+
 
             <a href="#" class="more-button">Read all</a>
         </section>
 
-        <section class="landing-section">
+        <section class="landing-section skills-section">
             <h2 class="section-title">Skills</h2>
-            <div class="col-full">
-                <div class="skills-category">
-                    <h3>Web development</h3>
-                    <ul class="skills">
-                        <li class="skill">
-                            <span>CSS</span>
-                            <div class="skill-value eightypercent">
-                                <span>90%</span>
-                            </div>
-                        </li>
-                        <li class="skill">
-                            <span>CSS</span>
-                            <div class="skill-value eightypercent">
-                                <span>90%</span>
-                            </div>
-                        </li>
-                        <li class="skill">
-                            <span>CSS</span>
-                            <div class="skill-value eightypercent">
-                                <span>90%</span>
-                            </div>
-                        </li>
-                        <li class="skill">
-                            <span>JAVASCRIPT</span>
-                            <div class="skill-value eightypercent">
-                                <span>80%</span>
-                            </div>
-                        </li>
-                        <li class="skill">
-                            <span>C#</span>
-                            <div class="skill-value seventypercent">
-                                <span>40%</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
+            <div class="skills-category">
+                <h3>Web development</h3>
+                <ul class="skills">
+                    <li class="skill">
+                        <span>CSS</span>
+                        <div class="skill-value eightypercent">
+                            <span>90%</span>
+                        </div>
+                    </li>
+                    <li class="skill">
+                        <span>CSS</span>
+                        <div class="skill-value eightypercent">
+                            <span>90%</span>
+                        </div>
+                    </li>
+                    <li class="skill">
+                        <span>CSS</span>
+                        <div class="skill-value eightypercent">
+                            <span>90%</span>
+                        </div>
+                    </li>
+                    <li class="skill">
+                        <span>JAVASCRIPT</span>
+                        <div class="skill-value eightypercent">
+                            <span>80%</span>
+                        </div>
+                    </li>
+                    <li class="skill">
+                        <span>C#</span>
+                        <div class="skill-value seventypercent">
+                            <span>40%</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Web development</h3>
+                <ul class="skills">
+                    <li class="skill">
+                        <span>CSS</span>
+                        <div class="skill-value eightypercent">
+                            <span>90%</span>
+                        </div>
+                    </li>
+                    <li class="skill">
+                        <span>CSS</span>
+                        <div class="skill-value eightypercent">
+                            <span>90%</span>
+                        </div>
+                    </li>
+                    <li class="skill">
+                        <span>CSS</span>
+                        <div class="skill-value eightypercent">
+                            <span>90%</span>
+                        </div>
+                    </li>
+                    <li class="skill">
+                        <span>JAVASCRIPT</span>
+                        <div class="skill-value eightypercent">
+                            <span>80%</span>
+                        </div>
+                    </li>
+                    <li class="skill">
+                        <span>C#</span>
+                        <div class="skill-value seventypercent">
+                            <span>40%</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
         </section>
@@ -168,18 +200,28 @@
 
     <footer>
         <div class="container">
-            <div class="col">
-                <p>© 20016 CodeNakama</p>
+            <div class="footer-content">
+                <div class="copyrights">
+                    <p>© 20016 CodeNakama</p>
 
-            </div>
-            <div class="col">
-                <div class="social-links">
-                    <a href="https://www.instagram.com/iamricardo_o/" title="Instagram" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/rjabreu" title="LinkedIn" target="_blank"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
-                    <a href="https://github.com/rjabreu" title="GitHub" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/iamricardo_o" title="Twitter" target="_blank"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
                 </div>
+
+                <ul class="social-links">
+                    <li>
+                        <a href="https://www.instagram.com/iamricardo_o/" title="Instagram" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/rjabreu" title="LinkedIn" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/rjabreu" title="GitHub" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/iamricardo_o" title="Twitter" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
             </div>
+
         </div>
     </footer>
     <script type="text/javascript" src="/public/js/bundle.js"></script>

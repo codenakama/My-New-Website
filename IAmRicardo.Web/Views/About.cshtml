@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.About>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Layout.cshtml";
+}
+
+@if (Model.Content.Skills.Any())
+{
+
+    <section class="landing-section skills-section">
+        <h2 class="section-title">Skills</h2>
+
+        @foreach (var skillCat in Model.Content.Skills)
+        {
+            var skills = skillCat.GetPropertyValue<IEnumerable<IPublishedContent>>("skills");
+            <div class="skills-category">
+                <h3>@skillCat.GetPropertyValue("categoryName")</h3>
+                @if (skills.Any())
+                {
+
+                    <ul class="skills">
+                        @foreach (var skill in skills)
+                        {
+                            <li class="skill">
+                                <span>@skill.GetPropertyValue("skillName")</span>
+                                <div class="skill-value" style="width: @skill.GetPropertyValue("value")%">
+                                    <span>@skill.GetPropertyValue("value")%</span>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        }
+    </section>
+}

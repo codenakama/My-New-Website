@@ -3,18 +3,16 @@
 @{
     Layout = "_Layout.cshtml";
 
-    IEnumerable<IPublishedContent> latestBlogPosts = Model.Content.Descendant("blog").Children.OrderBy(x => x.GetPropertyValue<DateTime>("date")).Take(2);
+    IEnumerable<IPublishedContent> latestBlogPosts = Model.Content.Descendant("blog").Children.OrderByDescending(x => x.GetPropertyValue<DateTime>("date")).Take(2);
 
-    IEnumerable<IPublishedContent> latestProjects = Model.Content.Descendant("projects").Children.OrderByDescending(x => x.CreateDate).Take(2);
+    IEnumerable<IPublishedContent> latestProjects = Model.Content.Descendant("projects").Children.OrderByDescending(x => x.GetPropertyValue<DateTime>("date")).Take(3);
 
     IPublishedContent settingsNode = Umbraco.TypedContentAtRoot().DescendantsOrSelf("settings").FirstOrDefault();
 }
 
-<section class="landing-section">
-    <div class="col-full">
+<section class="profile">
         <h1 id="site-title">@settingsNode.GetPropertyValue("siteTitle")</h1>
-        <div class="intro">@Html.Raw(Model.Content.Intro)</div>
-    </div>
+        <div class="intro">@Html.Raw(Model.Content.Preview)</div>
 </section>
 
 <section class="landing-section">
@@ -56,19 +54,20 @@
         {
 
             <h2 class="section-title">Latest blogs</h2>
+            <ul class="blog-posts">
+                @foreach (var blogPost in latestBlogPosts)
+                {
+                IPublishedContent image = blogPost.GetPropertyValue
+                <IEnumerable<IPublishedContent>>("bannerImage").FirstOrDefault();
 
-            foreach (var blogPost in latestBlogPosts)
-            {
-                IPublishedContent image = blogPost.GetPropertyValue<IEnumerable<IPublishedContent>>("bannerImage").FirstOrDefault();
-                
 
-                <div class="col">
-                    <div class="card blog-post-card animation-element bounce-up">
+                <li class="blog-post">
+                    <div class="card blog-post-card">
                         <div class="blog-post-card-header">
                             @if (image != null)
                             {
                                 <a href="@blogPost.Url">
-                                    
+
                                     <img src="@image.GetCropUrl(840,525)" alt="">
                                 </a>
                             }
@@ -93,10 +92,12 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </li>
             }
+            </ul>
+
         }
-    <div class="col-full center">
+    <div class="">
         <a href="@Model.Content.Descendant("blog").Url" class="more-button">Read all</a>
     </div>
-    </section>
+</section>

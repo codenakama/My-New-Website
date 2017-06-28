@@ -303,6 +303,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Umbraco.sdf" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -339,12 +340,37 @@
     <Content Include="default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Media\1008\project-1.png" />
+    <Content Include="Media\1008\project-1_big-thumb.jpg" />
+    <Content Include="Media\1008\project-1_big-thumb.png" />
+    <Content Include="Media\1008\project-1_thumb.jpg" />
+    <Content Include="Media\1008\project-1_thumb.png" />
+    <Content Include="Media\1009\project-2.png" />
+    <Content Include="Media\1009\project-2_big-thumb.jpg" />
+    <Content Include="Media\1009\project-2_big-thumb.png" />
+    <Content Include="Media\1009\project-2_thumb.jpg" />
+    <Content Include="Media\1009\project-2_thumb.png" />
+    <Content Include="Media\1010\blog-post-1.png" />
+    <Content Include="Media\1010\blog-post-1_thumb.jpg" />
+    <Content Include="Media\1010\blog-post-1_thumb.png" />
+    <Content Include="Media\1011\blog-post-2.png" />
+    <Content Include="Media\1011\blog-post-2_thumb.jpg" />
+    <Content Include="Media\1011\blog-post-2_thumb.png" />
+    <Content Include="Media\1012\blog-post-3.jpg" />
+    <Content Include="Media\1012\blog-post-3_big-thumb.jpg" />
+    <Content Include="Media\1012\blog-post-3_thumb.jpg" />
+    <Content Include="Media\1013\blog-post-4.jpg" />
+    <Content Include="Media\1013\blog-post-4_big-thumb.jpg" />
+    <Content Include="Media\1013\blog-post-4_thumb.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bundle.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Properties\PublishProfiles\Codenakama - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -399,7 +425,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Views\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -408,7 +436,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="images\" />
     <Folder Include="Models\" />
