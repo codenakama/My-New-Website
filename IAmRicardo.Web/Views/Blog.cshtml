@@ -6,6 +6,7 @@
     IEnumerable<IPublishedContent> blogPosts = Model.Content.Children.Where(x => x.IsVisible()).OrderByDescending(x => x.GetPropertyValue<DateTime>("date"));
 }
 
+<div class="container">
 
 <section class="landing-section">
     <h2 class="section-title">@Model.Content.MainTitle</h2>
@@ -58,3 +59,4 @@
         <a href="#" class="more-button">More</a>
     </div>
 </section>
+</div>

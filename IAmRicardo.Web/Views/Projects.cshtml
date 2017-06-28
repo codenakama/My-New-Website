@@ -6,6 +6,8 @@
     var latestProjects = Model.Content.Children;
 }
 
+<div class="container">
+
 <section class="landing-section">
     @if (latestProjects != null && latestProjects.Any())
     {
@@ -39,3 +41,4 @@
 
     @*<a href="@Model.Content.Descendant("projects").Url" class="more-button">All projects</a>*@
 </section>
+</div>
