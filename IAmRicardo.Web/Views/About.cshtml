@@ -4,6 +4,12 @@
     Layout = "_Layout.cshtml";
 }
 
+<div class="container">
+
+<section class="about-me landing-section">
+    @Html.Raw(Model.Content.Content)
+</section>
+
 @if (Model.Content.Skills.Any())
 {
 
@@ -34,3 +40,4 @@
         }
     </section>
 }
+</div>
