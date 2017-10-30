@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.BlogPost>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "_Layout.cshtml";
+}
+
+<article class="blog-post">
+    <h2 class="blog-post__title">@Model.Content.MainTitle</h2>
+
+    <div class="blog-post__header">
+        <div class="blog-post__banner" style="background-image: url(@Model.Content.BannerImage.First().Url);">
+        </div>
+
+    </div>
+    <div class="metadata">
+        <span class="metadata__category">@Model.Content.Category</span>
+        <time class="metadata__date" datetime="@Model.Content.Date.ToString("dd-MM-yyyy")">@Model.Content.Date.ToString("dd MMMM yyyy")</time>
+    </div>
+    <div class="blog-post__body">
+        @Html.Raw(Model.Content.Content)
+    </div>
+</article>

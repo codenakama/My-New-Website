@@ -1,0 +1,44 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Projects>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "_Layout.cshtml";
+
+    var latestProjects = Model.Content.Children;
+}
+
+<div class="container">
+
+<section class="landing-section">
+    @if (latestProjects != null && latestProjects.Any())
+    {
+        <h2 class="section-title">Projects</h2>
+
+        <ul class="projects-list">
+            @foreach (var project in latestProjects)
+            {
+                IPublishedContent image = project.GetPropertyValue<IEnumerable<IPublishedContent>>("bannerImage").FirstOrDefault();
+
+                <li class="projects-list__item">
+                    <a href="@project.Url">
+
+                    <div class="card project-card">
+                        @if (image != null)
+                        {
+                            <img src="@image.GetCropUrl(851,684)" alt="">
+                        }
+                        <div class="after" style="background: #@project.GetPropertyValue("highlightColor");">
+                            <a href="@project.Url">
+
+                                <h3 class="project-card-title">@project.GetPropertyValue("mainTitle")</h3>
+                            </a>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+
+    @*<a href="@Model.Content.Descendant("projects").Url" class="more-button">All projects</a>*@
+</section>
+</div>

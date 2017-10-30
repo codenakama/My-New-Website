@@ -1,0 +1,62 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Blog>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "_Layout.cshtml";
+
+    IEnumerable<IPublishedContent> blogPosts = Model.Content.Children.Where(x => x.IsVisible()).OrderByDescending(x => x.GetPropertyValue<DateTime>("date"));
+}
+
+<div class="container">
+
+<section class="landing-section">
+    <h2 class="section-title">@Model.Content.MainTitle</h2>
+    @if (blogPosts != null && blogPosts.Any())
+    {
+
+        <ul class="blog-posts">
+            @foreach (var blogPost in blogPosts)
+            {
+                IPublishedContent image = blogPost.GetPropertyValue
+                <IEnumerable<IPublishedContent>>("bannerImage").FirstOrDefault();
+
+
+                <li class="blog-post">
+                    <div class="card blog-post-card">
+                        <div class="blog-post-card-header">
+                            @if (image != null)
+                            {
+                                <a href="@blogPost.Url">
+
+                                    <img src="@image.GetCropUrl(840,525)" alt="">
+                                </a>
+                            }
+                        </div>
+                        <div class="blog-post-card-content">
+                            <div class="blog-post-metadata">
+                                <span class="blog-post-category">Web Development</span>
+                                @if (blogPost.HasValue("date"))
+                                {
+                                    DateTime date = blogPost.GetPropertyValue<DateTime>("date");
+
+                                    <time class="blog-post-date" datetime="@date.ToString("dd-MM-yyyy")">@date.ToString("dd MMMM yyyy")</time>
+
+                                }
+                            </div>
+
+                            <a href="@blogPost.Url">
+                                <h3 class="blog-post-title">@blogPost.GetPropertyValue("mainTitle")</h3>
+                            </a>
+                            <p class="blog-post-preview">
+                                @blogPost.GetPropertyValue("preview")
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+    <div class="">
+        <a href="#" class="more-button">More</a>
+    </div>
+</section>
+</div>
